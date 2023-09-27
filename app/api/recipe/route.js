@@ -1,8 +1,5 @@
 import Recipe from "@/models/recipe";
 import connect from "@/utils/connectToMongoDB";
-import { NextResponse } from "next/server";
-
-
 
 export const POST = async (req, res) => {
     let {
@@ -41,16 +38,6 @@ export const POST = async (req, res) => {
         return new Response("Failed to fetch all recipes", { status: 500 })
     }
 }
-
-export async function DELETE(params) {
-    await connect
-    let id = params.nextUrl.searchParams.get("id")
-
-    await Recipe.findByIdAndRemove(id);
-    return NextResponse.json({ messege: 'DELETE' }, { status: 200 })
-
-}
-
 export let GET = async (request, { params }) => {
     try {
         await connect;

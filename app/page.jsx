@@ -27,6 +27,7 @@ const Home = () => {
 
     const deleteRecipe = async (e) => {
         let id = e._id
+        console.log(id);
         try {
             await DeleteRequests.deleteRecipe(id, recipes, setRecipes)
         } catch (error) {

@@ -1,6 +1,5 @@
 import Footer from '@/components/Footer';
 import Header from '@/components/header/Header';
-import { SessionProvider } from 'next-auth/react';
 import "styles/global.css";
 import Provider from './provider';
 
@@ -18,7 +17,6 @@ const Layout = ({ children }) => {
                 <Provider>
                     <Header />
                     <main className="main">
-
                         {children}
                     </main>
                 </Provider>

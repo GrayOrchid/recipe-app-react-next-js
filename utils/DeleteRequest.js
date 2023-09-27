@@ -1,10 +1,16 @@
+
 export default class DeleteRequests {
 
     static async deleteRecipe(id, recipes, setRecipes) {
         try {
-            await fetch(`/api/recipe?id=${id.toString()}`, {
+            await fetch(`/api/recipe/deleteRecipe/${id.toString()}`, {
                 method: 'DELETE',
-            });
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ id: id }),
+            }
+            );
             const filteredRecipes = recipes.filter((p) => p._id !== id);
             setRecipes(filteredRecipes);
         } catch (error) {
@@ -17,13 +23,19 @@ export default class DeleteRequests {
 
     static async deleteCommentarie(id, setCommentaries, commentaries) {
         try {
-            await fetch(`/api/commentaries?id=${id.toString()}`, {
+            // commentaries
+            await fetch(`/api/commentaries/deleteCommentaries/${id.toString()}`, {
                 method: 'DELETE',
-            });
-            let commentariesFilter = commentaries.filter((item) => item._id !== id)
-            setCommentaries(commentariesFilter)
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ id: id }),
+            }
+            );
+            const filteredCommentaries = commentaries.filter((p) => p._id !== id);
+            setCommentaries(filteredCommentaries);
         } catch (error) {
-            console.error('Failed to delete from commentarie:', error);
+            console.error('Failed to delete recipe:', error);
         }
     };
 

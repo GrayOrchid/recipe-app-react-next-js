@@ -43,12 +43,4 @@ export const PATCH = async (req, { params }) => {
 };
 
 
-export async function DELETE(params) {
-    await connect
-    let id = params.nextUrl.searchParams.get("id")
-
-    await Commentarie.findByIdAndRemove(id);
-    return NextResponse.json({ messege: 'DELETE' }, { status: 200 })
-
-}
 
