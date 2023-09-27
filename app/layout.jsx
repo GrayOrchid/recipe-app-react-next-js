@@ -1,10 +1,8 @@
-'use client'
 import Footer from '@/components/Footer';
 import Header from '@/components/header/Header';
-import { SessionProvider, getProviders } from 'next-auth/react';
-import React, { useEffect, useState } from 'react';
-import { GiHamburgerMenu } from 'react-icons/gi'
+import { SessionProvider } from 'next-auth/react';
 import "styles/global.css";
+import Provider from './provider';
 
 export const metadata = {
     title: 'More Food',
@@ -12,24 +10,18 @@ export const metadata = {
 }
 
 const Layout = ({ children }) => {
-    let [show, setShow] = useState(false)
-    let [providers, setProviders] = useState(null)
-    useEffect(() => {
-        let setUpProviders = async () => {
-            let response = await getProviders()
-            setProviders(response)
-        }
-        setUpProviders()
-    }, []);
+
 
     return (
         <html>
-            <body className={show ? 'body __none-scroll' : 'body'}>
-                <SessionProvider >
-                    <Header show={show} setShow={setShow} providers={providers} />
-                    <GiHamburgerMenu className='menu-open' onClick={() => setShow(true)} />
-                    <main className="main">{children}</main>
-                </SessionProvider>
+            <body className='body'>
+                <Provider>
+                    <Header />
+                    <main className="main">
+
+                        {children}
+                    </main>
+                </Provider>
                 <Footer />
             </body>
         </html>

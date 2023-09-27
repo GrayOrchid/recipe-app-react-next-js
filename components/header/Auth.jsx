@@ -1,9 +1,18 @@
-import { signIn } from 'next-auth/react';
+import { getProviders, signIn, useSession } from 'next-auth/react';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
-const Auth = ({ session, providers }) => {
+const Auth = ({ session }) => {
+    let [providers, setProviders] = useState(null)
+    useEffect(() => {
+        let setUpProviders = async () => {
+            let response = await getProviders()
+            setProviders(response)
+        }
+        setUpProviders()
+    }, []);
+
 
     return (
         <>
@@ -22,7 +31,9 @@ const Auth = ({ session, providers }) => {
                     >
                         Sign in
                     </button>
-                ))}</>}</>
+                ))}</>}
+
+        </>
     );
 }
 
