@@ -1,0 +1,81 @@
+.cards{
+    display:flex;
+    gap:30px 30px;
+    margin:3rem;
+}
+.cards__card{
+    width: 340px;
+    height: 300px;
+    border-radius: 16px;
+    border-radius: 50px;
+    background: white;
+    cursor: pointer;
+    transition: .2s;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow:hidden;
+}
+.cards__card-info{
+    background: rgba(12, 0, 0, 0.4);
+    border-radius: 50px;
+    width: 100%;
+    height: 100%;
+}
+.cards__card-info-creator{
+    padding:1rem;
+    display:flex;
+    color:white;
+    font-size:20px;
+}
+.cards__card-info-creator-link{
+    display:flex;
+    justify-content: center;
+}
+.cards__card-info-creator-image{
+    border-radius:50px;
+    border:1px white solid;
+}
+.cards__card-info-creator-username{
+    margin-left:20px;
+    width:150px;
+    overflow:hidden;
+}
+.cards__card-delete{
+    margin-left:90px;
+    background:none;
+    color:white;
+    cursor:pointer;
+}
+.cards__card-info-bottom{
+    width:100%;
+    height:100%;
+    color:white;
+}
+.cards__card-info-text{
+    display:flex;
+    align-items:center;
+    flex-flow:column;
+    width:100%;
+    height:100%;
+    margin-top:50px;
+}
+.cards__card-info-bottom-link{
+    width:200px;
+    border:1px white solid;
+    padding:10px;
+    text-align:center;
+    border-radius:50px;
+    margin-top:10px;
+    transition:.2s;
+    cursor:pointer;
+    font-size:20px;
+}
+.cards__card-info-bottom-link:hover{
+    border:1px purple solid;
+    color: purple;
+}
+.cards__recipe-not-found{
+    text-align:center;
+    margin-top:50px;
+}

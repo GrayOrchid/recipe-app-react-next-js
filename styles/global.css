@@ -1,0 +1,129 @@
+
+   @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400&display=swap');
+
+
+   /* @import url('https://fonts.googleapis.com/css2?family=Poppins:ital@1&display=swap'); */
+
+.cards{
+display:flex;
+flex-wrap:wrap;
+}
+.cards__card{
+}
+
+
+body {
+    background: #dfe9f5;
+    font-family: 'Poppins', sans-serif;
+    font-style:semi bold;
+    margin:0px;
+    padding:0px;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Poppins', sans-serif;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+a{
+    color:white
+}
+
+
+
+
+
+.home{
+    width:100%;
+
+}
+.home__text{
+    margin-top:60px;
+    text-align:center;
+}
+
+.home__title{
+
+    font-size: 72px;
+    background: -webkit-linear-gradient(#091E3A, #2F80ED,#2D9EE0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.home__subtitle{
+    color:grey;
+}
+
+.__none-scroll{
+    overflow:hidden;
+    height:100vh;
+}
+.menu-open{
+   margin:1rem;
+    position:relative;
+    font-size:30px;
+    transition: .2s;
+    cursor:pointer;
+}
+.menu-open:hover{
+    transform:scale(1.1);
+    color:purple;
+}
+
+.food-types{
+  margin-top:30px;
+  margin:1rem;
+}
+.food-types__grpoup{
+
+    display:flex;
+    gap:0px 10px;
+    flex-flow:column;
+ /* text-align:center; */
+ margin-top:10px;
+}
+.food-types__btns{
+    display:flex;
+    gap:10px 15px;
+    margin-top:10px;
+    flex-wrap:wrap;
+}
+
+.food-types__btn{
+    
+    background:#c84e89;
+    background:linear-gradient(270deg,#c84e89,#F15F79);
+    padding:10px;
+    color:white;
+    cursor:pointer;
+  width:150px;
+  border-radius:90px;
+  transition: .2s;
+}
+.food-types__btn:hover{
+    transform:scale(1.1);
+}
+
+.home__search{
+    display:flex;
+    justify-content: center;
+    margin-top:30px;
+}
+
+.home__search-input{
+    width:350px;
+
+    padding:15px;
+    border-radius: 50px;
+    background: #fdfcfc;
+    box-shadow:  5px 5px 13px #656565,
+                 -5px -5px 13px #ffffff;
+transition:.3s;
+}
+.home__search-input:focus{
+    transform: scale(1.1);
+}

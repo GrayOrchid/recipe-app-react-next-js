@@ -1,0 +1,44 @@
+.recipe__add-form {
+    width:100%;
+    margin-top:140px;
+    display:flex;
+    flex-flow:column;
+    justify-content:center;
+    align-items: center;
+}
+
+.recipe__add-form-group  {
+    display:flex;
+    width:100%;
+    flex-wrap:wrap;
+    gap:10px 10px;
+    margin-bottom:20px;
+    padding:10px;
+}
+
+.recipe__add-form-text-input{
+    width:250px;
+    padding:5px;
+    border-radius:51px;
+}
+.recipe__add-form-text-textarea{
+    width:300px;
+    height:400px;
+}
+.recipe__add-form-textarea-group{
+    display:flex;
+    gap:10px 40px;
+}
+.recipe__add-form-text-button{
+    width:100px;
+    padding:5px;
+    background:blue;
+    color:white;
+    border-radius: 50px;
+    background: #fdfcfc;
+    box-shadow:  5px 5px 10px #d7d6d6,
+                 -5px -5px 10px #ffffff;
+    color:black;
+
+}
+

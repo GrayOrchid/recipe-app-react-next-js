@@ -1,0 +1,21 @@
+.user-page__user-info{
+    width:100%;
+    display:flex;
+    align-items:center;
+    flex-flow:column;
+}
+.user-page__user-info-image{
+    border-radius:50%;
+    object-fit: cover;
+    background: linear-gradient(225deg, #eff9ff, #c9d2dd);
+    box-shadow:  -49px 49px 72px #b5bdc6,
+                 49px -49px 72px #ffffff;
+}
+.user-page__user-info-name{
+    margin-top:40px;
+    text-transform:uppercase;
+    letter-spacing: 1.5px;
+}
+.user-page__recipes{
+    margin-top:100px;
+}
