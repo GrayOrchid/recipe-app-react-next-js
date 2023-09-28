@@ -9,8 +9,6 @@ export const metadata = {
 }
 
 const Layout = ({ children }) => {
-
-
     return (
         <html>
             <body className='body'>
