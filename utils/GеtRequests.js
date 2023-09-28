@@ -6,7 +6,7 @@ export default class GetRequests {
             const response = await fetch(`/api/recipe?type=${type}&diete=${diete}&query=${search}`);
             const data = await response.json();
 
-            if (data.recipes.length === 0) {
+            if (data?.recipes?.length === 0) {
                 setNoResults(true);
             } else {
                 setNoResults(false);
