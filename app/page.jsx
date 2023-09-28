@@ -42,7 +42,7 @@ const Home = () => {
             <TypesBtns search={search} setSearch={setSearch} setDiete={setDiete} setType={setType} type={type} diete={diete} />
             {isLoading ? (
                 <Loader />
-            ) : recipes.length ? (
+            ) : recipes?.length ? (
                 !noResults ? (
                     <HomeCards recipes={recipes} deleteRecipe={deleteRecipe} session={session} search={search} />
                 ) : (
