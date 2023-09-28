@@ -23,7 +23,7 @@ export default class DeleteRequests {
 
     static async deleteCommentarie(id, setCommentaries, commentaries) {
         try {
-            // commentaries
+
             await fetch(`/api/commentaries/deleteCommentaries/${id.toString()}`, {
                 method: 'DELETE',
                 headers: {
