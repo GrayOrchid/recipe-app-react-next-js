@@ -14,7 +14,7 @@ const Card = (props) => {
         >
             <div className="cards__card-info">
                 <div className="cards__card-info-creator" >
-                    <Link className='cards__card-info-creator-link' href={`./userPage/:${recipe?.creator?._id}`}>
+                    <Link className='cards__card-info-creator-link' href={`./userPage/${recipe?.creator?._id}`}>
                         <Image className="cards__card-info-creator-image" src={recipe?.creator?.image} width={30} height={30} alt='user-avatar' />
                         <span className='cards__card-info-creator-username'>{recipe?.creator?.username}</span>
                     </Link>
@@ -23,7 +23,7 @@ const Card = (props) => {
                 <div className="cards__card-info-bottom">
                     <div className="cards__card-info-text">
                         <h3 className='cards__card-info-bottom-title'>{recipe?.title || <Skeleton />}</h3>
-                        <Link className='cards__card-info-bottom-link' href={`./recipePage/:${recipe?._id}`} >Open Recipe Page</Link>
+                        <Link className='cards__card-info-bottom-link' href={`./recipePage/${recipe?._id}`} >Open Recipe Page</Link>
                     </div>
                 </div>
 
