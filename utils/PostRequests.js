@@ -2,7 +2,7 @@ export default class PostRequests {
 
     static async addRecipe(recipe, session) {
         try {
-            await fetch("http://localhost:3000/api/recipe", {
+            await fetch("https://main--delicate-cobbler-ecdfb1.netlify.app/api/recipe", {
                 method: 'POST',
                 headers: {
                     "Content-Type": "application/json"
@@ -32,7 +32,7 @@ export default class PostRequests {
                 userId: session?.user.id,
             };
 
-            let response = await fetch(`http://localhost:3000/api/commentaries`, {
+            let response = await fetch(`https://main--delicate-cobbler-ecdfb1.netlify.app/api/commentaries`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -52,7 +52,7 @@ export default class PostRequests {
     static async addToFavorite(session, id) {
         console.log(id);
         try {
-            await fetch(`http://localhost:3000/api/addToFavorite`, {
+            await fetch(`https://main--delicate-cobbler-ecdfb1.netlify.app/api/addToFavorite`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -67,7 +67,7 @@ export default class PostRequests {
 
     static async like(id, session) {
         try {
-            await fetch('http://localhost:3000/api/likes', {
+            await fetch('https://main--delicate-cobbler-ecdfb1.netlify.app/api/likes', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
