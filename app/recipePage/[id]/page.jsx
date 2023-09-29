@@ -100,10 +100,10 @@ const PageRecipe = () => {
     };
 
 
-    const isFavorite = favorites.some((favorite) => favorite._id === id);
+    const isFavorite = favorites.some((favorite) => favorite?._id === id);
     const toggleAddToFavorite = isFavorite ? true : false;
 
-    const isLike = likes.some((like) => like._id === session?.user?.id)
+    const isLike = likes.some((like) => like?._id === session?.user?.id)
     const toggleLike = isLike ? true : false
 
     return (

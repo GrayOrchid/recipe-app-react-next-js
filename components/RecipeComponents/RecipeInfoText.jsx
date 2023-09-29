@@ -7,19 +7,19 @@ const RecipeInfoText = ({ recipe }) => {
                 <h1 className="recipe-page__info-text-item-title">
                     Description:
                 </h1>
-                <p className="recipe-page__info-text-item-subtitle" >{recipe.description}</p>
+                <p className="recipe-page__info-text-item-subtitle" >{recipe?.description}</p>
             </div>
             <div className='recipe-page__info-text-item'>
                 <h1 className="recipe-page__info-text-item-title">
                     Ingredients:
                 </h1>
-                <p className="recipe-page__info-text-item-subtitle">{recipe.ingredients}</p>
+                <p className="recipe-page__info-text-item-subtitle">{recipe?.ingredients}</p>
             </div>
             <div className='recipe-page__info-text-item'>
                 <h1 className="recipe-page__info-text-item-title">
                     Cooking:
                 </h1>
-                <p className="recipe-page__info-text-item-subtitle">{recipe.cooking}</p>
+                <p className="recipe-page__info-text-item-subtitle">{recipe?.cooking}</p>
             </div>
         </div>
     );
