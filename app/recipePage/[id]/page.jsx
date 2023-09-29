@@ -23,18 +23,7 @@ const PageRecipe = () => {
     const [commentarie, setCommentarie] = useState('');
     const [favorites, setFavorites] = useState([]);
     const [likes, setLikes] = useState([])
-    const [hasError, setHasError] = useState(false);
-    const handleOnError = () => {
-
-        try {
-            console.log('work');
-        } catch (error) {
-            console.error(error, errorInfo);
-            setHasError(true);
-        }
-    };
     useEffect(() => {
-        handleOnError()
         const getData = async () => {
             try {
                 await GetRequests.getRecipe(setRecipe, setLikes, id);
