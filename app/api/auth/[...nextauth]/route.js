@@ -35,7 +35,6 @@ let handler = NextAuth({
                         image: profile.picture,
                         createdBy: [],
                         favorite: [],
-
                     })
                 }
                 return true
