@@ -1,21 +1,26 @@
-import React from 'react'
+'use client'
+import React, { Component } from 'react';
 
-
-class ErrorBoundary extends React.Component {
-    state = { hasError: false }
+class ErrorBoundary extends Component {
+    constructor(props) {
+        super(props);
+        this.state = { hasError: false };
+    }
 
     static getDerivedStateFromError(error) {
-        return { hasError: true }
+        return { hasError: true };
     }
+
     componentDidCatch(error, info) {
-        console.log(`error ${error, info}`);
+        console.error('Произошла ошибка:', error, info);
     }
+
     render() {
         if (this.state.hasError) {
-            return this.props.fallback
+            return this.props.fallback;
         }
-        return this.props.children
+        return this.props.children;
     }
 }
 
-export default ErrorBoundary
+export default ErrorBoundary;
