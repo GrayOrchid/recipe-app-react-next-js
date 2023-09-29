@@ -17,10 +17,18 @@ const UserPage = () => {
     let { data: session } = useSession();
     let id = params.id;
     const [hasError, setHasError] = useState(false);
-    const handleOnError = (error, errorInfo) => {
+    const handleOnError = () => {
 
-        console.error(error, errorInfo);
-        setHasError(true);
+        try {
+            console.log('work');
+        } catch (error) {
+            console.error(error, errorInfo);
+            setHasError(true);
+        }
+
+
+
+
     };
 
 
