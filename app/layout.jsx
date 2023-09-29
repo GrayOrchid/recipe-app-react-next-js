@@ -2,6 +2,7 @@ import Footer from '@/components/Footer';
 import Header from '@/components/header/Header';
 import "styles/global.css";
 import Provider from './provider';
+import ErrorBoundary from './ErrorBoundary';
 
 export const metadata = {
     title: 'More Food',
@@ -11,15 +12,17 @@ export const metadata = {
 const Layout = ({ children }) => {
     return (
         <html>
-            <body className='body'>
-                <Provider>
-                    <Header />
-                    <main className="main">
-                        {children}
-                    </main>
-                </Provider>
-                <Footer />
-            </body>
+            <ErrorBoundary>
+                <body className='body'>
+                    <Provider>
+                        <Header />
+                        <main className="main">
+                            {children}
+                        </main>
+                    </Provider>
+                    <Footer />
+                </body>
+            </ErrorBoundary>
         </html>
     );
 }
