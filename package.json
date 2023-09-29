@@ -14,7 +14,7 @@
     "framer-motion": "^10.16.4",
     "mongodb": "^5.7.0",
     "mongoose": "^7.4.1",
-    "next": "13.4.12",
+    "next": "^13.5.2",
     "next-auth": "^4.22.3",
     "postcss": "8.4.27",
     "prop-types": "^15.8.1",
