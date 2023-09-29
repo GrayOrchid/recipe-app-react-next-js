@@ -23,7 +23,15 @@ const PageRecipe = () => {
     const [commentarie, setCommentarie] = useState('');
     const [favorites, setFavorites] = useState([]);
     const [likes, setLikes] = useState([])
+    const [hasError, setHasError] = useState(false);
+    const handleOnError = (error, errorInfo) => {
+
+        console.error(error, errorInfo);
+        setHasError(true);
+    };
+
     useEffect(() => {
+        // handleOnError()
         const getData = async () => {
             try {
                 await GetRequests.getRecipe(setRecipe, setLikes, id);
@@ -33,6 +41,7 @@ const PageRecipe = () => {
                 console.error('Failed to query recipes:', error);
             }
         };
+        console.log('ww');
         getData();
     }, [session]);
 

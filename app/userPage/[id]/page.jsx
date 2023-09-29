@@ -16,12 +16,21 @@ const UserPage = () => {
     let params = useParams();
     let { data: session } = useSession();
     let id = params.id;
+    const [hasError, setHasError] = useState(false);
+    const handleOnError = (error, errorInfo) => {
+
+        console.error(error, errorInfo);
+        setHasError(true);
+    };
+
 
     useEffect(() => {
         async function getData(params) {
             await GetRequests.getUser(setUser, setFavoriteRecipes, id);
             await GetRequests.getUserRecipes(setRecipes, id);
         }
+        console.log('w');
+        handleOnError()
         getData();
     }, []);
 

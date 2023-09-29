@@ -1,9 +1,17 @@
 export default class GetRequests {
 
+
+
+
     static async getRecipes(setRecipes, search, diete, type, setNoResults, setIsLoading) {
         try {
             setIsLoading(true);
-            const response = await fetch(`/api/recipe?type=${type}&diete=${diete}&query=${search}`);
+            const params = new URLSearchParams();
+            if (type) params.append('type', type);
+            if (diete) params.append('diete', diete);
+            if (search) params.append('query', search);
+
+            const response = await fetch(`/api/recipe?${params.toString()}`);
             const data = await response.json();
 
             if (data?.recipes?.length === 0) {
@@ -18,6 +26,7 @@ export default class GetRequests {
             setIsLoading(false);
         }
     }
+
 
 
     static async getUser(setUser, setFavoriteRecipes, id) {
