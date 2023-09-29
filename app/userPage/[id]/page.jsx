@@ -25,10 +25,6 @@ const UserPage = () => {
             console.error(error, errorInfo);
             setHasError(true);
         }
-
-
-
-
     };
 
 
