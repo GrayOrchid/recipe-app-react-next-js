@@ -46,7 +46,7 @@ const Home = () => {
                 !noResults ? (
                     <HomeCards recipes={recipes} deleteRecipe={deleteRecipe} session={session} search={search} />
                 ) : (
-                    <h1>Нет совпадений</h1>
+                    <h1 className='home__not-found'>No matches</h1>
                 )
             ) : (
                 <Loader />

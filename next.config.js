@@ -1,10 +1,10 @@
+const CompressionPlugin = require('compression-webpack-plugin');
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    // output: 'export',
     experimental: {
         appDir: true,
-        serverComponentsExternalPackages: ["mongoose"],
-
+        serverComponentsExternalPackages: ['mongoose'],
     },
     images: {
         domains: ['lh3.googleusercontent.com'],
@@ -13,9 +13,21 @@ const nextConfig = {
         config.experiments = {
             ...config.experiments,
             topLevelAwait: true,
-        }
+        };
+
+        // Добавьте плагин сжатия
+        config.plugins.push(
+            new CompressionPlugin({
+                filename: '[path][base].gz',
+                algorithm: 'gzip',
+                test: /\.(js|css|html|svg)$/,
+                threshold: 8192,
+                minRatio: 0.8,
+            })
+        );
+
         return config;
-    }
+    },
 }
 
-module.exports = nextConfig;
+module.exports = nextConfig

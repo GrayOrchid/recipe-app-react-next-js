@@ -127,3 +127,7 @@ transition:.3s;
 .home__search-input:focus{
     transform: scale(1.1);
 }
+.home__not-found{
+    text-align:center;
+    margin-top:50px;
+}
