@@ -4,7 +4,7 @@ import Link from 'next/link';
 import React from 'react';
 
 const Comment = (props) => {
-    let { commentarie, deleteCommentarie, setShow, session, index } = props
+    let { commentarie, deleteCommentarie, session, index } = props
     return (
         <motion.div className='comments__item'
             initial={{ opacity: 0, }}
@@ -23,7 +23,7 @@ const Comment = (props) => {
                     )
                 }
             </div>
-            <p className='comments__text'>{commentarie.text}</p>
+            <p className='comments__text'>{commentarie?.text}</p>
         </motion.div>
 
     );

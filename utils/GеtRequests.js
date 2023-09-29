@@ -47,8 +47,8 @@ export default class GetRequests {
             let response = await fetch(`/api/recipe/userRecipes/${id}`)
             if (response) {
                 let data = await response.json()
-                setRecipes(data.recipes)
-                console.log(data.recipes);
+                setRecipes(data?.recipes)
+                console.log(data?.recipes);
             }
         } catch (error) {
             console.log(error);
@@ -62,8 +62,8 @@ export default class GetRequests {
             if (id) {
                 let response = await fetch(`/api/recipe/onerecipe/${id}`)
                 let data = await response.json()
-                setRecipe(data.recipe)
-                setLikes(data.recipe.likes)
+                setRecipe(data?.recipe)
+                setLikes(data?.recipe.likes)
             }
         } catch (error) {
             console.log(error);
@@ -100,7 +100,7 @@ export default class GetRequests {
             const response = await fetch(`/api/commentaries/getCommentaries/${id}`);
             const data = await response.json();
             if (data) {
-                setCommentaries(data.commentaries);
+                setCommentaries(data?.commentaries);
             }
         } catch (error) {
             console.error('Failed to fetch commentaries:', error);
