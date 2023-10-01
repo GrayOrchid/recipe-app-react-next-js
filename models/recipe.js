@@ -18,7 +18,7 @@ const recipeSchema = new Schema({
         required: true,
     },
     portions: {
-        type: Number,
+        type: Bueffer,
         required: true,
     },
     time: {

@@ -18,6 +18,7 @@ const Header = () => {
                     <nav className="header__menu-nav">
                         <Auth session={session} />
                         <ui className="header__menu-nav-list">
+                            <li className="header__menu-nav-list-item"><Link className="header__menu-nav-list-link" href={'/recipeAddPage'}>Create Recipe</Link></li>
                             <li className="header__menu-nav-list-item"><Link className="header__menu-nav-list-link" href={'/'}>Home</Link></li>
                             {session?.user && (<li className="header__menu-nav-list-item"><Link className="header__menu-nav-list-link" href={'/recipeAddPage'}>Create Recipe</Link></li>)}
                             {/* <li className="header__menu-nav-list-item"><Link className="header__menu-nav-list-link" href={'/'}>Contacts</Link></li> */}

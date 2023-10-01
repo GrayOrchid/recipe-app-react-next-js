@@ -14,8 +14,6 @@ const nextConfig = {
             ...config.experiments,
             topLevelAwait: true,
         };
-
-        // Добавьте плагин сжатия
         config.plugins.push(
             new CompressionPlugin({
                 filename: '[path][base].gz',
