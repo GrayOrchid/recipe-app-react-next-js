@@ -17,15 +17,21 @@ export const POST = async (req, res) => {
 
     } = await req.json()
 
+
     try {
         await connect
+
+        const compressedImgBuffer = await sharp(img)
+            .jpeg({ quality: 60 })
+            .toBuffer();
+
         let newRecipe = new Recipe({
             creator: userId,
             title,
             description,
             portions,
             time,
-            img,
+            img: compressedImgBuffer,
             diete,
             type,
             recipe,

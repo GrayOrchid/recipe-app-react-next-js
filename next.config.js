@@ -1,8 +1,4 @@
-const ImageminPlugin = require('imagemin-webpack-plugin').default;
-const imageminJpegtran = require('imagemin-jpegtran');
-const imageminPngquant = require('imagemin-pngquant');
-const imageminGifsicle = require('imagemin-gifsicle');
-const imageminSvgo = require('imagemin-svgo');
+const CompressionPlugin = require('compression-webpack-plugin');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -19,17 +15,14 @@ const nextConfig = {
             topLevelAwait: true,
         };
 
-
+        // Добавьте плагин сжатия
         config.plugins.push(
-            new ImageminPlugin({
-                plugins: [
-                    imageminJpegtran(),
-                    imageminPngquant({
-                        quality: [0.6, 0.8],
-                    }),
-                    imageminGifsicle(),
-                    imageminSvgo(),
-                ],
+            new CompressionPlugin({
+                filename: '[path][base].gz',
+                algorithm: 'gzip',
+                test: /\.(js|css|html|svg)$/,
+                threshold: 8192,
+                minRatio: 0.8,
             })
         );
 
@@ -37,4 +30,4 @@ const nextConfig = {
     },
 }
 
-module.exports = nextConfig;
+module.exports = nextConfig
