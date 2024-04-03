@@ -1,6 +1,5 @@
 
 export default class DeleteRequests {
-
     static async deleteRecipe(id, recipes, setRecipes) {
         try {
             await fetch(`/api/recipe/deleteRecipe/${id.toString()}`, {
